@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   	<extension id="application" point="org.eclipse.core.runtime.applications">
+      	<application>
+         	<run class="osgi.sdk.product.update.application.Application"></run>
+      	</application>
+   	</extension>
+   	<extension point="org.eclipse.ui.perspectives">
+      	<perspective name="OSGi Perspective" 
+      		class="osgi.sdk.product.update.application.views.Perspective"
+            id="osgi.sdk.product.update.application.views.perspective">
+      	</perspective>
+   	</extension>
+	<extension id="product" point="org.eclipse.core.runtime.products">
+		<product application="osgi.sdk.product.update.application.application"
+            name="osgi.sdk.product.update.product">
+        <property name="windowImages" value="icons/eclipse16.gif,icons/eclipse32.gif,icons/eclipse48.gif,icons/eclipse256.gif"></property>
+        <property name="aboutImage" value="icons/eclipse16.gif"></property>
+        <property name="appName" value="osgi.sdk.product.update.product"> </property>
+      </product>
+   </extension>
+
+</plugin>
